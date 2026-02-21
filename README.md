@@ -12,6 +12,19 @@
 
 ## Install
 
+### Local Development (Workspace)
+
+Since this package is developed alongside `ichikara` in the same workspace:
+
+```bash
+# In your app directory (e.g. ichikara/)
+npm install ../kami
+```
+
+### From npm (Published)
+
+*Once published:*
+
 ```bash
 npm install @jlgrimes/kami
 # or
