@@ -63,6 +63,15 @@ export type {
   UseLongPressOptions,
 } from './hooks/useGestures';
 
+// ── New: QRT-212 ──────────────────────────────────────────────────────────────
+export { Select } from './Select';
+export type {
+  SelectProps,
+  SelectSingleProps,
+  SelectMultiProps,
+  SelectOption,
+} from './Select';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 
