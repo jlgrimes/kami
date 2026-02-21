@@ -79,8 +79,8 @@ Spring physics primitives in `src/animations.ts`.
 | `PullToRefresh` | iOS overscroll-to-refresh — spring indicator, async callback | ✅ |
 | `Avatar` + `AvatarGroup` | Image + initials fallback, online dot, skeleton, pressable | ✅ |
 | `EmptyState` | Full-screen / contained zero-content placeholder | ✅ |
-| `WheelPicker` | Primitive drum-roll scroll picker column | 📋 Planned |
-| `DatePicker` | iOS drum-roll date/time picker (composes WheelPicker) | 📋 Planned |
+| `WheelPicker` | Drum-roll scroll picker column — CSS scroll-snap, fog masks, haptics | ✅ |
+| `DatePicker` | iOS drum-roll date/time/datetime picker (composes WheelPicker) | ✅ |
 | `List` + `ListItem` | iOS-style grouped list rows | ✅ |
 | `SwipeableListItem` | Swipe-to-reveal trailing/leading row actions, full-swipe-to-trigger | ✅ |
 | `Badge` | Numeric or status badge | ✅ |
@@ -103,6 +103,7 @@ Spring physics primitives in `src/animations.ts`.
 | `usePan` | Drag delta + velocity via native pointer events |
 | `usePinch` | Two-finger scale gesture via native touch events |
 | `useLongPress` | 500ms hold with haptic + movement cancellation |
+| `useDatePicker` | Opens DatePicker in BottomSheet — confirm/cancel, returns value |
 
 ---
 

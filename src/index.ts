@@ -87,6 +87,17 @@ export type {
   SelectOption,
 } from './Select';
 
+// ── New: QRT-235 ──────────────────────────────────────────────────────────────
+export { WheelPicker, DatePicker, useDatePicker } from './WheelPicker';
+export type {
+  WheelPickerProps,
+  WheelPickerItem,
+  DatePickerProps,
+  DatePickerMode,
+  UseDatePickerOptions,
+  UseDatePickerResult,
+} from './WheelPicker';
+
 // ── New: QRT-236 ──────────────────────────────────────────────────────────────
 export { SwipeableListItem } from './SwipeableListItem';
 export type { SwipeableListItemProps, SwipeAction, SwipeActionVariant } from './SwipeableListItem';
