@@ -170,3 +170,23 @@ html, body {
    Suppress browser default outline; components apply their own focus ring.   */
 :focus:not(:focus-visible) { outline: none; }
 :focus-visible { outline: none; }
+
+/* ── Named animations (shared by ActivityIndicator, PullToRefresh, etc.) ─── */
+@keyframes kami-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes kami-pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1;   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Replace spinning with a gentle pulse for users who prefer reduced motion */
+  .kami-spinner {
+    animation-name: kami-pulse !important;
+    animation-duration: 1.4s !important;
+    animation-timing-function: ease-in-out !important;
+  }
+}

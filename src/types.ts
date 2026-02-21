@@ -36,6 +36,11 @@ export interface ButtonProps {
   'aria-expanded'?: boolean;
   /** Associates button with another element by id. */
   'aria-controls'?: string;
+  /**
+   * Loading state — swaps children for a spinner, disables the button,
+   * and keeps its dimensions stable to prevent layout shift.
+   */
+  loading?: boolean;
 }
 
 export interface ListItemProps {

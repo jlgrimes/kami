@@ -65,7 +65,7 @@ Spring physics primitives in `src/animations.ts`.
 | `BottomSheet` | Draggable sheet from bottom, spring physics | ✅ |
 | `ActionSheet` | iOS action sheet with destructive actions | ✅ |
 | `Toast` + `ToastProvider` | Ephemeral notifications, top/bottom position | ✅ |
-| `ActivityIndicator` | Circular spinner (inline, button, full-screen overlay) | 📋 Planned |
+| `ActivityIndicator` | Circular spinner (inline, button loading, full-screen overlay) | ✅ |
 
 ### Core UI
 | Component | Description | Status |

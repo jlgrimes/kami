@@ -87,6 +87,14 @@ export type {
   SelectOption,
 } from './Select';
 
+// ── New: QRT-237 ──────────────────────────────────────────────────────────────
+export { ActivityIndicator, ActivityIndicatorOverlay } from './ActivityIndicator';
+export type {
+  ActivityIndicatorProps,
+  ActivityIndicatorSize,
+  ActivityIndicatorOverlayProps,
+} from './ActivityIndicator';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 
