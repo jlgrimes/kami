@@ -74,6 +74,7 @@ Spring physics primitives in `src/animations.ts`.
 | `Card` | Elevated surface with padding variants | ✅ |
 | `Input` | Text input with label, error, helper text | ✅ |
 | `SearchBar` | iOS search bar with spring-animated cancel button | ✅ |
+| `Switch` | iOS UISwitch toggle with spring thumb + haptics | ✅ |
 | `WheelPicker` | Primitive drum-roll scroll picker column | 📋 Planned |
 | `DatePicker` | iOS drum-roll date/time picker (composes WheelPicker) | 📋 Planned |
 | `List` + `ListItem` | iOS-style grouped list rows | ✅ |

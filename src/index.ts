@@ -45,6 +45,10 @@ export type {
 export { SearchBar } from './SearchBar';
 export type { SearchBarProps } from './SearchBar';
 
+// ── New: QRT-211 ──────────────────────────────────────────────────────────────
+export { Switch } from './Switch';
+export type { SwitchProps, SwitchVariant } from './Switch';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 
