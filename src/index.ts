@@ -63,6 +63,10 @@ export type {
   UseLongPressOptions,
 } from './hooks/useGestures';
 
+// ── New: QRT-217 ──────────────────────────────────────────────────────────────
+export { EmptyState } from './EmptyState';
+export type { EmptyStateProps, EmptyStateAction, EmptyStateVariant } from './EmptyState';
+
 // ── New: QRT-216 ──────────────────────────────────────────────────────────────
 export { Avatar, AvatarGroup } from './Avatar';
 export type { AvatarProps, AvatarSize, AvatarGroupProps } from './Avatar';
