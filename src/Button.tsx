@@ -13,11 +13,21 @@ export function Button({
   disabled = false,
   className = '',
   fullWidth = false,
+  type = 'button',
+  'aria-label': ariaLabel,
+  'aria-pressed': ariaPressed,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
 }: ButtonProps) {
   return (
     <button
+      type={type}
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
+      aria-pressed={ariaPressed}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
       className={[
         // 44px min touch target (Apple HIG)
         'min-h-[44px] px-5 rounded-xl font-semibold text-[15px]',

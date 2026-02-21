@@ -20,12 +20,22 @@ export interface CardProps {
 }
 
 export interface ButtonProps {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'ghost';
   disabled?: boolean;
   className?: string;
   fullWidth?: boolean;
+  /** Explicit button type. Default: 'button' (safe for use inside forms). */
+  type?: 'button' | 'submit' | 'reset';
+  /** aria-label for icon-only buttons where children is an icon. */
+  'aria-label'?: string;
+  /** aria-pressed for toggle buttons. */
+  'aria-pressed'?: boolean;
+  /** Marks button as currently expanded (e.g. accordion trigger). */
+  'aria-expanded'?: boolean;
+  /** Associates button with another element by id. */
+  'aria-controls'?: string;
 }
 
 export interface ListItemProps {

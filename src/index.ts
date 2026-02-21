@@ -53,6 +53,9 @@ export type { SwitchProps, SwitchVariant } from './Switch';
 export { useHaptics } from './hooks/useHaptics';
 export type { HapticsAPI, ImpactLevel } from './hooks/useHaptics';
 
+// ── New: QRT-222 — accessibility ──────────────────────────────────────────────
+export { useFocusTrap } from './hooks/useFocusTrap';
+
 // ── New: QRT-213 ──────────────────────────────────────────────────────────────
 export { usePan, usePinch, useLongPress } from './hooks/useGestures';
 export type {

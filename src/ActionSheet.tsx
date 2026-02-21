@@ -19,6 +19,7 @@
  */
 
 import { useEffect, useRef } from 'react';
+import { useFocusTrap } from './hooks/useFocusTrap';
 
 export interface ActionSheetAction {
   label: string;
@@ -43,10 +44,14 @@ const SPRING = {
 } as const;
 
 export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps) {
-  const backdropRef = useRef<HTMLDivElement>(null);
-  const cardRef     = useRef<HTMLDivElement>(null);
-  const cancelRef   = useRef<HTMLButtonElement>(null);
-  const prevOpen    = useRef(false);
+  const backdropRef  = useRef<HTMLDivElement>(null);
+  const cardRef      = useRef<HTMLDivElement>(null);
+  const cancelRef    = useRef<HTMLButtonElement>(null);
+  const dialogRef    = useRef<HTMLDivElement>(null);  // focus trap container
+  const prevOpen     = useRef(false);
+
+  // Focus trap covers both card actions + cancel button
+  useFocusTrap(dialogRef, open, onClose);
 
   useEffect(() => {
     const backdrop = backdropRef.current;
@@ -112,6 +117,8 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
 
   return (
     <>
+      {/* Focus trap group — display:contents so it doesn't affect fixed layout */}
+      <div ref={dialogRef} style={{ display: 'contents' }}>
       {/* Backdrop */}
       <div
         ref={backdropRef}
@@ -176,6 +183,7 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
       >
         Cancel
       </button>
+      </div>{/* end focus trap group */}
     </>
   );
 }

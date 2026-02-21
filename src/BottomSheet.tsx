@@ -17,6 +17,7 @@
  */
 
 import { useCallback, useEffect, useRef, type ReactNode } from 'react';
+import { useFocusTrap } from './hooks/useFocusTrap';
 
 interface BottomSheetProps {
   open: boolean;
@@ -35,6 +36,10 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
   const backdropRef = useRef<HTMLDivElement>(null);
   const sheetRef    = useRef<HTMLDivElement>(null);
   const prevOpen    = useRef(false);
+
+  // Focus trap: traps keyboard focus inside the sheet when open;
+  // restores focus to trigger element on close.
+  useFocusTrap(sheetRef, open, onClose);
 
   // Animate open/close transitions
   useEffect(() => {
