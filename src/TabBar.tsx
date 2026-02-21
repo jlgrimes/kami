@@ -59,10 +59,10 @@ function TabButton({
           : 'bg-transparent',
       ].join(' ')}
     >
-      <span className={`text-lg leading-none font-black ${active ? 'text-white' : 'text-gray-400'}`}>
+      <span className={`text-lg leading-none font-black ${active ? 'text-[var(--color-paper)]' : 'text-[var(--color-muted)]'}`}>
         {icon}
       </span>
-      <span className={`text-[10px] font-mono uppercase tracking-widest ${active ? 'text-white/70' : 'text-gray-400'}`}>
+      <span className={`text-[10px] font-mono uppercase tracking-widest ${active ? 'text-[var(--color-paper)] opacity-70' : 'text-[var(--color-muted)]'}`}>
         {label}
       </span>
     </button>

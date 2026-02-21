@@ -138,7 +138,7 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
       >
         {title && (
           <div className="px-4 pt-4 pb-3 border-b border-[var(--surface-divider)]">
-            <p className="text-xs text-gray-400 text-center font-medium leading-snug">{title}</p>
+            <p className="text-xs text-[var(--color-muted)] text-center font-medium leading-snug">{title}</p>
           </div>
         )}
 

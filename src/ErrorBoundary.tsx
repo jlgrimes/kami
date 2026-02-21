@@ -44,7 +44,7 @@ export function ErrorState({
       <span className="text-4xl select-none" aria-hidden="true">⚠️</span>
       <p className="font-bold text-[var(--color-ink)] text-base">{title}</p>
       {message && (
-        <p className="text-sm text-gray-500 dark:text-gray-400 font-mono leading-snug max-w-xs">
+        <p className="text-sm text-[var(--color-muted)] font-mono leading-snug max-w-xs">
           {message}
         </p>
       )}

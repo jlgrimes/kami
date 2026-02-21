@@ -482,7 +482,7 @@ export function Select<T extends string = string>(props: SelectProps<T>) {
               type="button"
               onClick={closeSheet}
               className={[
-                'w-full bg-[var(--color-ink)] text-white',
+                'w-full bg-[var(--color-ink)] text-[var(--color-paper)]',
                 'rounded-xl py-3.5 text-[15px] font-semibold',
                 'active:opacity-75 transition-opacity',
               ].join(' ')}

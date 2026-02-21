@@ -128,7 +128,7 @@ function ActionButton({ label, onPress, variant = 'primary' }: EmptyStateAction)
       style={{
         background:   'var(--color-ink)',
         border:       'none',
-        color:        'white',
+        color:        'var(--color-paper)',
         fontSize:     15,
         fontWeight:   600,
         padding:      '0 24px',

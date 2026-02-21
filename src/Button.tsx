@@ -1,8 +1,8 @@
 import type { ButtonProps } from './types';
 
 const VARIANTS = {
-  primary: 'bg-[var(--color-ink)] text-white active:opacity-75',
-  secondary: 'bg-gray-100 text-[var(--color-ink)] active:bg-gray-200',
+  primary: 'bg-[var(--color-ink)] text-[var(--color-paper)] active:opacity-75',
+  secondary: 'bg-[var(--input-bg)] text-[var(--color-ink)] active:bg-[var(--surface-divider)]',
   ghost: 'text-[var(--color-accent)] active:opacity-50',
 };
 

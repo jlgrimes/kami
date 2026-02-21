@@ -65,7 +65,7 @@ export function useToast(): ToastContextValue {
 // ── Toast chip visuals ────────────────────────────────────────────────────────
 
 const VARIANT_STYLES: Record<ToastVariant, { bg: string; icon: string }> = {
-  default: { bg: 'bg-[var(--color-ink)] text-white dark:bg-[var(--surface-solid)]', icon: '' },
+  default: { bg: 'bg-[var(--color-ink)] text-[var(--color-paper)]', icon: '' },
   success: { bg: 'bg-[var(--surface-success)] text-[var(--color-success)]', icon: '✓' },
   error:   { bg: 'bg-[var(--surface-danger)] text-[var(--color-danger)]', icon: '✕' },
   info:    { bg: 'bg-[var(--surface-info)] text-[var(--color-subject)]', icon: 'ℹ' },
