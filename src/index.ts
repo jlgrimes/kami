@@ -63,6 +63,10 @@ export type {
   UseLongPressOptions,
 } from './hooks/useGestures';
 
+// ── New: QRT-216 ──────────────────────────────────────────────────────────────
+export { Avatar, AvatarGroup } from './Avatar';
+export type { AvatarProps, AvatarSize, AvatarGroupProps } from './Avatar';
+
 // ── New: QRT-215 ──────────────────────────────────────────────────────────────
 export { PullToRefresh } from './PullToRefresh';
 export type { PullToRefreshProps } from './PullToRefresh';

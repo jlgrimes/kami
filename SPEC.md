@@ -77,6 +77,7 @@ Spring physics primitives in `src/animations.ts`.
 | `Switch` | iOS UISwitch toggle with spring thumb + haptics | ✅ |
 | `Select` | BottomSheet-based picker — single, multi, searchable | ✅ |
 | `PullToRefresh` | iOS overscroll-to-refresh — spring indicator, async callback | ✅ |
+| `Avatar` + `AvatarGroup` | Image + initials fallback, online dot, skeleton, pressable | ✅ |
 | `WheelPicker` | Primitive drum-roll scroll picker column | 📋 Planned |
 | `DatePicker` | iOS drum-roll date/time picker (composes WheelPicker) | 📋 Planned |
 | `List` + `ListItem` | iOS-style grouped list rows | ✅ |
