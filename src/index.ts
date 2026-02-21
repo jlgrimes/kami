@@ -87,6 +87,10 @@ export type {
   SelectOption,
 } from './Select';
 
+// ── New: QRT-236 ──────────────────────────────────────────────────────────────
+export { SwipeableListItem } from './SwipeableListItem';
+export type { SwipeableListItemProps, SwipeAction, SwipeActionVariant } from './SwipeableListItem';
+
 // ── New: QRT-237 ──────────────────────────────────────────────────────────────
 export { ActivityIndicator, ActivityIndicatorOverlay } from './ActivityIndicator';
 export type {

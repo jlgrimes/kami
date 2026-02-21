@@ -82,7 +82,7 @@ Spring physics primitives in `src/animations.ts`.
 | `WheelPicker` | Primitive drum-roll scroll picker column | 📋 Planned |
 | `DatePicker` | iOS drum-roll date/time picker (composes WheelPicker) | 📋 Planned |
 | `List` + `ListItem` | iOS-style grouped list rows | ✅ |
-| `SwipeableListItem` | Swipe-to-reveal trailing/leading row actions | 📋 Planned |
+| `SwipeableListItem` | Swipe-to-reveal trailing/leading row actions, full-swipe-to-trigger | ✅ |
 | `Badge` | Numeric or status badge | ✅ |
 | `Chip` + `ChipGroup` | Filter chips, selectable | ✅ |
 | `SegmentedControl` | iOS segmented picker | ✅ |
