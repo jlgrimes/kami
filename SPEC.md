@@ -95,6 +95,7 @@ Spring physics primitives in `src/animations.ts`.
 | `useNavigation` | Navigate programmatically in a NavigationStack |
 | `useScrollToTop` | Scroll to top on tab re-tap (iOS convention) |
 | `useToast` | Show toasts from anywhere in the component tree |
+| `useHaptics` | Unified haptic feedback: impact / notification / selection |
 
 ---
 

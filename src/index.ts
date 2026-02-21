@@ -49,6 +49,10 @@ export type { SearchBarProps } from './SearchBar';
 export { Switch } from './Switch';
 export type { SwitchProps, SwitchVariant } from './Switch';
 
+// ── New: QRT-214 ──────────────────────────────────────────────────────────────
+export { useHaptics } from './hooks/useHaptics';
+export type { HapticsAPI, ImpactLevel } from './hooks/useHaptics';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 
