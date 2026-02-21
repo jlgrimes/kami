@@ -41,6 +41,10 @@ export type {
   StepDotsProps,
 } from './Progress';
 
+// ── New: QRT-218 ──────────────────────────────────────────────────────────────
+export { SearchBar } from './SearchBar';
+export type { SearchBarProps } from './SearchBar';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 

@@ -65,6 +65,7 @@ Spring physics primitives in `src/animations.ts`.
 | `BottomSheet` | Draggable sheet from bottom, spring physics | ✅ |
 | `ActionSheet` | iOS action sheet with destructive actions | ✅ |
 | `Toast` + `ToastProvider` | Ephemeral notifications, top/bottom position | ✅ |
+| `ActivityIndicator` | Circular spinner (inline, button, full-screen overlay) | 📋 Planned |
 
 ### Core UI
 | Component | Description | Status |
@@ -72,7 +73,11 @@ Spring physics primitives in `src/animations.ts`.
 | `Button` | Primary, secondary, ghost, destructive variants | ✅ |
 | `Card` | Elevated surface with padding variants | ✅ |
 | `Input` | Text input with label, error, helper text | ✅ |
+| `SearchBar` | iOS search bar with spring-animated cancel button | ✅ |
+| `WheelPicker` | Primitive drum-roll scroll picker column | 📋 Planned |
+| `DatePicker` | iOS drum-roll date/time picker (composes WheelPicker) | 📋 Planned |
 | `List` + `ListItem` | iOS-style grouped list rows | ✅ |
+| `SwipeableListItem` | Swipe-to-reveal trailing/leading row actions | 📋 Planned |
 | `Badge` | Numeric or status badge | ✅ |
 | `Chip` + `ChipGroup` | Filter chips, selectable | ✅ |
 | `SegmentedControl` | iOS segmented picker | ✅ |
