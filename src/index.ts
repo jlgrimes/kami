@@ -63,6 +63,10 @@ export type {
   UseLongPressOptions,
 } from './hooks/useGestures';
 
+// ── New: QRT-215 ──────────────────────────────────────────────────────────────
+export { PullToRefresh } from './PullToRefresh';
+export type { PullToRefreshProps } from './PullToRefresh';
+
 // ── New: QRT-212 ──────────────────────────────────────────────────────────────
 export { Select } from './Select';
 export type {
