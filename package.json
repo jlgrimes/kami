@@ -1,0 +1,45 @@
+{
+  "name": "@jlgrimes/kami",
+  "version": "0.1.0",
+  "description": "Native-feeling React UI for Capacitor and mobile web",
+  "type": "module",
+  "main": "./dist/kami.umd.cjs",
+  "module": "./dist/kami.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/kami.js",
+      "require": "./dist/kami.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "tsc -b && vite build",
+    "build:storybook": "storybook build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@capacitor/core": "^8.1.0",
+    "@capacitor/haptics": "^8.0.0",
+    "@eslint/js": "^9.39.1",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/react-vite": "^10.2.10",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}

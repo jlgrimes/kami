@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   KAMI DESIGN TOKEN SYSTEM
+   All primitive + semantic tokens live here.
+   Never hard-code colors/radii/shadows in components — reference these.
+   ────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* ── Brand palette (primitives) ──────────────────────────────────────────── */
+  --color-ink:      #1a1a2e;  /* primary text, backgrounds */
+  --color-paper:    #f8f4ef;  /* page background */
+  --color-accent:   #e63946;  /* red accent / CTA */
+  --color-noun:     #2d6a4f;  /* grammar: noun */
+  --color-topic:    #e9c46a;  /* grammar: topic particle */
+  --color-subject:  #4361ee;  /* grammar: subject */
+  --color-object:   #e76f51;  /* grammar: object */
+  --color-verb:     #9b2226;  /* grammar: verb */
+  --color-particle: #6d6875;  /* grammar: particle */
+
+  /* ── Semantic status colors ──────────────────────────────────────────────── */
+  --color-success:  #2d6a4f;  /* green — correct / done */
+  --color-warning:  #e9c46a;  /* amber — caution */
+  --color-danger:   #e63946;  /* red — error / destructive */
+  --color-muted:    #6d6875;  /* low-emphasis text / icons */
+
+  /* ── Typography scale ────────────────────────────────────────────────────── */
+  --text-2xs:  11px;
+  --text-xs:   12px;
+  --text-sm:   13px;
+  --text-base: 15px;   /* iOS default body */
+  --text-md:   17px;   /* iOS headline */
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  28px;
+  --text-3xl:  34px;   /* iOS large title */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.5;
+
+  /* ── Spacing scale (4px base) ────────────────────────────────────────────── */
+  --space-0:    0px;
+  --space-0-5:  2px;
+  --space-1:    4px;
+  --space-1-5:  6px;
+  --space-2:    8px;
+  --space-2-5:  10px;
+  --space-3:    12px;
+  --space-3-5:  14px;
+  --space-4:    16px;
+  --space-5:    20px;
+  --space-6:    24px;
+  --space-7:    28px;
+  --space-8:    32px;
+  --space-10:   40px;
+  --space-12:   48px;
+  --space-16:   64px;
+
+  /* ── Touch target minimum (Apple HIG) ───────────────────────────────────── */
+  --touch-target: 44px;
+
+  /* ── Border radius ───────────────────────────────────────────────────────── */
+  --radius-xs:  6px;
+  --radius-sm:  10px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ─────────────────────────────────────────────────────────────── */
+  --shadow-xs:    0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.10);
+  --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg:    0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-float: 0 4px 32px rgba(0, 0, 0, 0.18);  /* tab bar / modals */
+  --shadow-glow:  0 0 0 3px rgba(230, 57, 70, 0.22); /* accent focus ring */
+
+  /* ── Motion / transitions ────────────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.28, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast:   150ms;
+  --duration-base:   220ms;
+  --duration-slow:   380ms;
+
+  --transition-fast:   var(--duration-fast) var(--ease-out);
+  --transition-base:   var(--duration-base) var(--ease-out);
+  --transition-spring: var(--duration-slow) var(--ease-spring);
+
+  /* ── Z-index layers ──────────────────────────────────────────────────────── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 40;
+  --z-modal:   50;
+  --z-toast:   60;
+  --z-top:     9999;
+}
+
+/* ── Light-mode surface tokens ─────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --surface-bg:          rgba(255, 255, 255, 0.82);
+  --surface-border:      rgba(255, 255, 255, 0.62);
+  --surface-active:      rgba(255, 255, 255, 0.60);
+  --surface-solid:       #ffffff;
+  --surface-solid-hover: #f9fafb;   /* gray-50 */
+  --surface-divider:     rgba(0, 0, 0, 0.06);
+  --input-bg:            rgba(0, 0, 0, 0.06);   /* filled input backing */
+
+  /* Semantic status surfaces */
+  --surface-success:     rgba(45, 106, 79, 0.10);
+  --surface-warning:     rgba(233, 196, 106, 0.18);
+  --surface-danger:      rgba(230, 57, 70, 0.10);
+  --surface-info:        rgba(67, 97, 238, 0.10);
+
+  /* Focus ring */
+  --ring-accent: 0 0 0 3px rgba(230, 57, 70, 0.28);
+  --ring-input:  0 0 0 3px rgba(67, 97, 238, 0.24);
+}
+
+/* ── Dark-mode overrides ───────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Main palette overrides */
+    --color-ink:   #e8e4df;
+    --color-paper: #0e0c1a;
+
+    /* Semantic status */
+    --color-success: #52b788;
+    --color-warning: #e9c46a;
+    --color-danger:  #ff6b6b;
+
+    /* Surfaces */
+    --surface-bg:          rgba(255, 255, 255, 0.05);
+    --surface-border:      rgba(255, 255, 255, 0.09);
+    --surface-active:      rgba(255, 255, 255, 0.03);
+    --surface-solid:       #1c1a2e;
+    --surface-solid-hover: #231f35;
+    --surface-divider:     rgba(255, 255, 255, 0.07);
+    --input-bg:            rgba(255, 255, 255, 0.08);
+
+    /* Semantic status surfaces (dark) */
+    --surface-success:     rgba(82, 183, 136, 0.12);
+    --surface-warning:     rgba(233, 196, 106, 0.12);
+    --surface-danger:      rgba(255, 107, 107, 0.12);
+    --surface-info:        rgba(67, 97, 238, 0.14);
+
+    /* Focus ring (dark) */
+    --ring-accent: 0 0 0 3px rgba(230, 57, 70, 0.38);
+    --ring-input:  0 0 0 3px rgba(99, 130, 255, 0.30);
+  }
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+html, body {
+  height: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* Prevent overscroll bounce revealing old background behind the app */
+  overscroll-behavior: none;
+}
+
+/* ── Focus visible — keyboard only ──────────────────────────────────────────
+   Suppress browser default outline; components apply their own focus ring.   */
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible { outline: none; }
