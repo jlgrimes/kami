@@ -53,6 +53,16 @@ export type { SwitchProps, SwitchVariant } from './Switch';
 export { useHaptics } from './hooks/useHaptics';
 export type { HapticsAPI, ImpactLevel } from './hooks/useHaptics';
 
+// ── New: QRT-213 ──────────────────────────────────────────────────────────────
+export { usePan, usePinch, useLongPress } from './hooks/useGestures';
+export type {
+  PanState,
+  UsePanOptions,
+  PinchState,
+  UsePinchOptions,
+  UseLongPressOptions,
+} from './hooks/useGestures';
+
 // ── Dev tools — import directly, not via barrel, to keep prod bundle clean ────
 // import { ComponentCatalog } from './ComponentCatalog'; // use in app conditionally
 

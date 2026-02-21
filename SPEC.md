@@ -96,6 +96,9 @@ Spring physics primitives in `src/animations.ts`.
 | `useScrollToTop` | Scroll to top on tab re-tap (iOS convention) |
 | `useToast` | Show toasts from anywhere in the component tree |
 | `useHaptics` | Unified haptic feedback: impact / notification / selection |
+| `usePan` | Drag delta + velocity via native pointer events |
+| `usePinch` | Two-finger scale gesture via native touch events |
+| `useLongPress` | 500ms hold with haptic + movement cancellation |
 
 ---
 
