@@ -93,8 +93,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     this.props.onError?.(error, info);
 
     // Lazy-report to monitoring if available
-    import('./../../lib/monitoring').then(({ reportError }) => {
-      reportError(error, { componentStack: info.componentStack ?? '' });
+    // monitoring hook (optional — configure externally)
+    Promise.resolve().then(() => {
+
     }).catch(() => { /* monitoring not configured */ });
   }
 

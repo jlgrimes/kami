@@ -1,7 +1,7 @@
 import type { NavbarProps } from './types';
 import { useNavigation, usePageDepth } from './NavigationStack';
 import { useScrollToTop } from './Page';
-import { hapticMedium } from '../haptics';
+import { hapticMedium } from './haptics';
 
 export function Navbar({ title, left, right }: NavbarProps) {
   const { pop }    = useNavigation();

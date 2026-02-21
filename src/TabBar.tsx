@@ -1,6 +1,6 @@
 // iOS 26-style floating tab bar — glass pill that floats above the home indicator
 
-import { hapticMedium } from '../haptics';
+import { hapticMedium } from './haptics';
 
 interface Tab {
   id: string;
