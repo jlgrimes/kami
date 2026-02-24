@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "tsc -b && vite build",
+    "prepare": "npm run build",
     "build:storybook": "storybook build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src"
