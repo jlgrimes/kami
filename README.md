@@ -6,7 +6,7 @@
 
 [![npm](https://img.shields.io/npm/v/@jlgrimes/kami)](https://www.npmjs.com/package/@jlgrimes/kami)
 [![CI](https://github.com/jlgrimes/kami/actions/workflows/ci.yml/badge.svg)](https://github.com/jlgrimes/kami/actions/workflows/ci.yml)
-[![Storybook](https://img.shields.io/badge/Storybook-live-ff4785)](https://kami-phi.vercel.app)
+[![Docs](https://img.shields.io/badge/Docs-live-111827)](https://kami-phi.vercel.app/docs)
 
 ---
 
@@ -113,9 +113,9 @@ function App() {
 
 ---
 
-## Component Gallery
+## Component Docs
 
-**Live Storybook:** [kami-phi.vercel.app](https://kami-phi.vercel.app)
+**Live docs:** [kami-phi.vercel.app/docs](https://kami-phi.vercel.app/docs)
 
 ---
 
