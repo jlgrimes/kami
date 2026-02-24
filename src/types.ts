@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 export interface PageProps {
   children: ReactNode;
   className?: string;
+  includeTabBarInset?: boolean;
 }
 
 export interface NavbarProps {

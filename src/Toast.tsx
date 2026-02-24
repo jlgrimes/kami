@@ -21,6 +21,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { z } from './tokens';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -65,7 +66,7 @@ export function useToast(): ToastContextValue {
 // ── Toast chip visuals ────────────────────────────────────────────────────────
 
 const VARIANT_STYLES: Record<ToastVariant, { bg: string; icon: string }> = {
-  default: { bg: 'bg-[var(--color-ink)] text-[var(--color-paper)]', icon: '' },
+  default: { bg: 'bg-[var(--color-ink)] text-white dark:bg-[var(--surface-solid)]', icon: '' },
   success: { bg: 'bg-[var(--surface-success)] text-[var(--color-success)]', icon: '✓' },
   error:   { bg: 'bg-[var(--surface-danger)] text-[var(--color-danger)]', icon: '✕' },
   info:    { bg: 'bg-[var(--surface-info)] text-[var(--color-subject)]', icon: 'ℹ' },
@@ -170,7 +171,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {/* Bottom toasts — above tab bar */}
       {bottomToasts.length > 0 && (
         <div
-          className="fixed inset-x-0 bottom-0 z-[60] flex flex-col items-center gap-2 pb-[calc(env(safe-area-inset-bottom)+68px)] pointer-events-none"
+          className="fixed inset-x-0 bottom-0 flex flex-col items-center gap-2 pb-[calc(env(safe-area-inset-bottom)+68px)] pointer-events-none"
+          style={{ zIndex: z.toast }}
           aria-live="polite"
           aria-atomic="true"
         >
@@ -185,7 +187,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
       {/* Top toasts — below status bar */}
       {topToasts.length > 0 && (
         <div
-          className="fixed inset-x-0 top-0 z-[60] flex flex-col items-center gap-2 pt-[calc(env(safe-area-inset-top)+12px)] pointer-events-none"
+          className="fixed inset-x-0 top-0 flex flex-col items-center gap-2 pt-[calc(env(safe-area-inset-top)+12px)] pointer-events-none"
+          style={{ zIndex: z.toast }}
           aria-live="polite"
           aria-atomic="true"
         >

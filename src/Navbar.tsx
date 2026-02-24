@@ -11,8 +11,6 @@ export function Navbar({ title, left, right }: NavbarProps) {
 
   const backButton = (
     <button
-      type="button"
-      aria-label="Go back"
       onClick={() => { hapticMedium(); pop(); }}
       className="flex items-center gap-1 text-[var(--color-accent)] font-mono text-xs tracking-wider min-h-[44px] min-w-[44px] active:opacity-40 transition-opacity"
     >
@@ -33,9 +31,7 @@ export function Navbar({ title, left, right }: NavbarProps) {
         {/* Title — tap to scroll to top (iOS convention) */}
         <div className="flex-1 flex justify-center">
           <button
-            type="button"
             onClick={scrollToTop}
-            aria-label={`${title} — tap to scroll to top`}
             className="text-[15px] font-semibold text-[var(--color-ink)] truncate active:opacity-60 transition-opacity"
           >
             {title}

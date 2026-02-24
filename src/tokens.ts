@@ -143,6 +143,12 @@ export const z = {
   overlay: 40,
   modal:   50,
   toast:   60,
+  navbar:  20,
+  tabBar:  30,
+  sheetBackdrop: 70,
+  sheet:   80,
+  actionSheetBackdrop: 70,
+  actionSheet: 80,
   top:     9999,
 } as const;
 

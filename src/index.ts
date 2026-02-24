@@ -2,7 +2,7 @@
 export { NavigationStack, useNavigation } from './NavigationStack';
 export type { NavigationHandle } from './NavigationStack';
 export { TabBar } from './TabBar';
-export { Page, PageContent, useScrollToTop } from './Page';
+export { Page, PageContent, FullscreenPage, FullscreenPageContent, useScrollToTop } from './Page';
 export { Navbar } from './Navbar';
 
 // ── Core components ───────────────────────────────────────────────────────────
@@ -16,6 +16,8 @@ export { ToastProvider, useToast } from './Toast';
 export type { ToastVariant, ToastPosition, ToastOptions } from './Toast';
 export { BottomSheet } from './BottomSheet';
 export { ActionSheet } from './ActionSheet';
+export { AppViewportProvider } from './AppViewportProvider';
+export { OverlayNavigatorProvider, useOverlayNavigator } from './OverlayNavigator';
 export type { ActionSheetAction } from './ActionSheet';
 export {
   spring, animate, pageTransition, useAnimation,

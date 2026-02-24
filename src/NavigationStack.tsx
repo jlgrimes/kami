@@ -67,7 +67,11 @@ function tx(el: HTMLElement | null, x: number, transition = 'none') {
 
 // ── NavigationStack ──────────────────────────────────────────────────────────
 
-export const NavigationStack = forwardRef<NavigationHandle, { initialPage: ReactNode }>(
+interface NavigationStackProps {
+  initialPage: ReactNode;
+}
+
+export const NavigationStack = forwardRef<NavigationHandle, NavigationStackProps>(
 function NavigationStack({ initialPage }, ref) {
   const winW = window.innerWidth;
 
@@ -258,7 +262,7 @@ function NavigationStack({ initialPage }, ref) {
 
   return (
     <NavigationContext.Provider value={{ push, pop, canGoBack }}>
-      <div ref={containerRef} className="h-dvh overflow-hidden relative bg-[var(--color-paper)]">
+      <div ref={containerRef} className="h-dvh overflow-hidden relative">
         {stack.map((entry, i) => {
           const isCurrent = i === stack.length - 1;
           const isPrev    = i === stack.length - 2;
@@ -290,4 +294,3 @@ function NavigationStack({ initialPage }, ref) {
     </NavigationContext.Provider>
   );
 });
-

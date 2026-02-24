@@ -18,6 +18,11 @@ interface PageProps {
   className?: string;
 }
 
+interface PageContentProps extends PageProps {
+  /** Include extra bottom inset reserved for the tab bar. */
+  includeTabBarInset?: boolean;
+}
+
 export function Page({ children, className = '' }: PageProps) {
   const scrollFnRef = useRef<() => void>(() => {});
   return (
@@ -31,7 +36,11 @@ export function Page({ children, className = '' }: PageProps) {
 
 // ── PageContent ───────────────────────────────────────────────────────────────
 
-export function PageContent({ children, className = '' }: PageProps) {
+export function PageContent({
+  children,
+  className = '',
+  includeTabBarInset = true,
+}: PageContentProps) {
   const scrollRef  = useRef<HTMLDivElement>(null);
   const scrollFnRef = useContext(ScrollFnContext);
 
@@ -47,9 +56,29 @@ export function PageContent({ children, className = '' }: PageProps) {
     <div
       ref={scrollRef}
       className={`flex-1 overflow-y-auto overscroll-contain ${className}`}
-      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 80px)' }}
+      style={{
+        paddingBottom: includeTabBarInset
+          ? 'calc(env(safe-area-inset-bottom) + 80px)'
+          : 'env(safe-area-inset-bottom)',
+      }}
     >
       {children}
     </div>
+  );
+}
+
+export function FullscreenPage({ children, className = '' }: PageProps) {
+  return (
+    <Page className={className}>
+      {children}
+    </Page>
+  );
+}
+
+export function FullscreenPageContent({ children, className = '' }: PageProps) {
+  return (
+    <PageContent includeTabBarInset={false} className={className}>
+      {children}
+    </PageContent>
   );
 }

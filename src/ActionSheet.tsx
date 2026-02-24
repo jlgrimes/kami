@@ -19,7 +19,7 @@
  */
 
 import { useEffect, useRef } from 'react';
-import { useFocusTrap } from './hooks/useFocusTrap';
+import { z } from './tokens';
 
 export interface ActionSheetAction {
   label: string;
@@ -44,14 +44,10 @@ const SPRING = {
 } as const;
 
 export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps) {
-  const backdropRef  = useRef<HTMLDivElement>(null);
-  const cardRef      = useRef<HTMLDivElement>(null);
-  const cancelRef    = useRef<HTMLButtonElement>(null);
-  const dialogRef    = useRef<HTMLDivElement>(null);  // focus trap container
-  const prevOpen     = useRef(false);
-
-  // Focus trap covers both card actions + cancel button
-  useFocusTrap(dialogRef, open, onClose);
+  const backdropRef = useRef<HTMLDivElement>(null);
+  const cardRef     = useRef<HTMLDivElement>(null);
+  const cancelRef   = useRef<HTMLButtonElement>(null);
+  const prevOpen    = useRef(false);
 
   useEffect(() => {
     const backdrop = backdropRef.current;
@@ -117,13 +113,11 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
 
   return (
     <>
-      {/* Focus trap group — display:contents so it doesn't affect fixed layout */}
-      <div ref={dialogRef} style={{ display: 'contents' }}>
       {/* Backdrop */}
       <div
         ref={backdropRef}
-        style={{ display: 'none' }}
-        className="fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]"
+        style={{ display: 'none', zIndex: z.actionSheetBackdrop }}
+        className="fixed inset-0 bg-black/30 backdrop-blur-[2px]"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -134,9 +128,9 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
         role="dialog"
         aria-modal="true"
         aria-label={title ?? 'Action sheet'}
-        style={{ display: 'none' }}
+        style={{ display: 'none', zIndex: z.actionSheet }}
         className={[
-          'fixed inset-x-4 z-50',
+          'fixed inset-x-4',
           'bottom-[calc(env(safe-area-inset-bottom)+76px)]', // above tab bar
           'bg-[var(--surface-solid)] rounded-[20px]',
           'shadow-[var(--shadow-float)]',
@@ -145,7 +139,7 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
       >
         {title && (
           <div className="px-4 pt-4 pb-3 border-b border-[var(--surface-divider)]">
-            <p className="text-xs text-[var(--color-muted)] text-center font-medium leading-snug">{title}</p>
+            <p className="text-xs text-gray-400 text-center font-medium leading-snug">{title}</p>
           </div>
         )}
 
@@ -171,9 +165,9 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
       <button
         ref={cancelRef}
         onClick={onClose}
-        style={{ display: 'none' }}
+        style={{ display: 'none', zIndex: z.actionSheet }}
         className={[
-          'fixed inset-x-4 z-50',
+          'fixed inset-x-4',
           'bottom-[calc(env(safe-area-inset-bottom)+8px)]',
           'bg-[var(--surface-solid)] rounded-[20px]',
           'py-[15px] text-center text-[17px] font-semibold text-[var(--color-accent)]',
@@ -183,7 +177,6 @@ export function ActionSheet({ open, onClose, title, actions }: ActionSheetProps)
       >
         Cancel
       </button>
-      </div>{/* end focus trap group */}
     </>
   );
 }

@@ -1,6 +1,7 @@
 // iOS 26-style floating tab bar — glass pill that floats above the home indicator
 
 import { hapticMedium } from './haptics';
+import { z } from './tokens';
 
 interface Tab {
   id: string;
@@ -18,8 +19,11 @@ export function TabBar<T extends string>({ tabs, activeTab, onChange }: TabBarPr
   return (
     // outer div is full-width pointer-events-none so content underneath is still tappable
     <div
-      className="fixed bottom-0 left-0 right-0 flex justify-center z-50 pointer-events-none"
-      style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 10px)' }}
+      className="fixed bottom-0 left-0 right-0 flex justify-center pointer-events-none"
+      style={{
+        zIndex: z.tabBar,
+        paddingBottom: 'calc(env(safe-area-inset-bottom) + 10px)',
+      }}
     >
       {/* Glass pill */}
       <div className="pointer-events-auto flex bg-[var(--surface-bg)] backdrop-blur-2xl rounded-full shadow-[0_4px_32px_rgba(0,0,0,0.18)] border border-[var(--surface-border)] p-1.5 gap-1">
@@ -59,10 +63,10 @@ function TabButton({
           : 'bg-transparent',
       ].join(' ')}
     >
-      <span className={`text-lg leading-none font-black ${active ? 'text-[var(--color-paper)]' : 'text-[var(--color-muted)]'}`}>
+      <span className={`text-lg leading-none font-black ${active ? 'text-white' : 'text-gray-400'}`}>
         {icon}
       </span>
-      <span className={`text-[10px] font-mono uppercase tracking-widest ${active ? 'text-[var(--color-paper)] opacity-70' : 'text-[var(--color-muted)]'}`}>
+      <span className={`text-[10px] font-mono uppercase tracking-widest ${active ? 'text-white/70' : 'text-gray-400'}`}>
         {label}
       </span>
     </button>

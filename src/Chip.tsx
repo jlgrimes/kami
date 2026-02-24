@@ -31,7 +31,7 @@ export function Chip({
         'transition-all duration-150',
         // selected state
         selected
-          ? 'bg-[var(--color-ink)] text-[var(--color-paper)] shadow-[var(--shadow-xs)]'
+          ? 'bg-[var(--color-ink)] text-white shadow-[var(--shadow-xs)]'
           : 'bg-[var(--input-bg)] text-[var(--color-ink)] border border-[var(--surface-divider)]',
         // interaction
         disabled

@@ -17,7 +17,7 @@
  */
 
 import { useCallback, useEffect, useRef, type ReactNode } from 'react';
-import { useFocusTrap } from './hooks/useFocusTrap';
+import { z } from './tokens';
 
 interface BottomSheetProps {
   open: boolean;
@@ -36,10 +36,6 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
   const backdropRef = useRef<HTMLDivElement>(null);
   const sheetRef    = useRef<HTMLDivElement>(null);
   const prevOpen    = useRef(false);
-
-  // Focus trap: traps keyboard focus inside the sheet when open;
-  // restores focus to trigger element on close.
-  useFocusTrap(sheetRef, open, onClose);
 
   // Animate open/close transitions
   useEffect(() => {
@@ -102,8 +98,8 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
       {/* Backdrop */}
       <div
         ref={backdropRef}
-        style={{ display: 'none' }}
-        className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+        style={{ display: 'none', zIndex: z.sheetBackdrop }}
+        className="fixed inset-0 bg-black/40 backdrop-blur-sm"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -114,9 +110,9 @@ export function BottomSheet({ open, onClose, title, children }: BottomSheetProps
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        style={{ display: 'none' }}
+        style={{ display: 'none', zIndex: z.sheet }}
         className={[
-          'fixed inset-x-0 bottom-0 z-50',
+          'fixed inset-x-0 bottom-0',
           'bg-[var(--surface-solid)] rounded-t-[28px]',
           'shadow-[var(--shadow-float)]',
           'max-h-[90dvh] flex flex-col',
