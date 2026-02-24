@@ -73,7 +73,17 @@ async function removeStaleFiles(dir, keepSlugs) {
 }
 
 async function main() {
-  const indexContent = await fs.readFile(indexPath, 'utf8');
+  let indexContent;
+  try {
+    indexContent = await fs.readFile(indexPath, 'utf8');
+  } catch (error) {
+    if (error && error.code === 'ENOENT') {
+      console.warn(`Skipping docs generation: missing ${indexPath}`);
+      return;
+    }
+    throw error;
+  }
+
   const componentNames = parseComponentNames(indexContent);
 
   await ensureDir(componentsDir);
