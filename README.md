@@ -6,7 +6,7 @@
 
 [![npm](https://img.shields.io/npm/v/@jlgrimes/kami)](https://www.npmjs.com/package/@jlgrimes/kami)
 [![CI](https://github.com/jlgrimes/kami/actions/workflows/ci.yml/badge.svg)](https://github.com/jlgrimes/kami/actions/workflows/ci.yml)
-[![Docs](https://img.shields.io/badge/Docs-live-111827)](https://kami-phi.vercel.app/docs)
+[![Docs](https://img.shields.io/badge/Docs-live-111827)](https://kami-docs.vercel.app/docs)
 
 ---
 
@@ -115,7 +115,9 @@ function App() {
 
 ## Component Docs
 
-**Live docs:** [kami-phi.vercel.app/docs](https://kami-phi.vercel.app/docs)
+**Live docs:** [kami-docs.vercel.app/docs](https://kami-docs.vercel.app/docs)
+
+Docs source lives in a separate repo: https://github.com/jlgrimes/kami-docs
 
 ---
 
