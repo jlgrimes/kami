@@ -133,7 +133,6 @@ src/
 ├── hooks/
 │   └── useSwipeBack.ts
 ├── ComponentName.tsx
-├── ComponentName.stories.tsx   ← Storybook story (required for each component)
 └── ComponentCatalog.tsx        ← in-app dev reference (dev only)
 ```
 
@@ -142,10 +141,9 @@ src/
 ## Adding a New Component
 
 1. Create `src/ComponentName.tsx` — follow existing patterns (tokens, no magic numbers)
-2. Create `src/ComponentName.stories.tsx` — at least a Default story
-3. Add types to `src/types.ts` if the component has a props interface
-4. Export from `src/index.ts`
-5. Add to the Component Inventory table in this SPEC.md
+2. Add types to `src/types.ts` if the component has a props interface
+3. Export from `src/index.ts`
+4. Add to the Component Inventory table in this SPEC.md
 
 ---
 
@@ -157,5 +155,4 @@ When modifying this library:
 2. **Check tokens.ts before writing any style value.**
 3. **Run `npm run typecheck` after changes.**
 4. **Update the Component Inventory table if you add/remove components.**
-5. **Storybook is the source of truth for visual correctness.** If a component looks wrong in Storybook, it's wrong.
-6. **Never break the public API in `index.ts` without bumping the version.**
+5. **Never break the public API in `index.ts` without bumping the version.**

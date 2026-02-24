@@ -41,7 +41,7 @@ yarn add @jlgrimes/kami
 
 ```tsx
 // In your app root (e.g. main.tsx)
-import '@jlgrimes/kami/dist/style.css'; // ← design tokens + base styles
+import '@jlgrimes/kami/styles.css'; // ← design tokens + base styles
 ```
 
 ### 2. Use components

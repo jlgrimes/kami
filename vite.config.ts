@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    dts({ include: ['src'], exclude: ['src/**/*.stories.*'] }),
+    dts({ include: ['src'] }),
   ],
   build: {
     lib: {
