@@ -1,5 +1,5 @@
 {
+  "framework": "nextjs",
   "buildCommand": "cd docs && npm run build",
-  "outputDirectory": "docs/.next",
   "installCommand": "npm install --legacy-peer-deps && cd docs && npm install"
 }
