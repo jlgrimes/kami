@@ -1,5 +1,5 @@
 {
-  "name": "@jlgrimes/kami",
+  "name": "@kamiui/kami",
   "version": "0.1.0",
   "description": "Native-feeling React UI for Capacitor and mobile web",
   "type": "module",
